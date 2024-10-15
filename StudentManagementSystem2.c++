@@ -1,5 +1,5 @@
 #include <iostream>
-
+#include <string>
 using namespace std;
 
 struct Student {
@@ -81,11 +81,13 @@ void input(Student*& students, int& total) {
     for (int i = total; i < total + curr_size; ++i) {
         cout << "\nEnter Information of student " << i + 1 << endl << endl;
         cout << "Enter name: ";
-        cin >> newStudents[i].name;
+        cin.ignore();
+        getline(cin, newStudents[i].name);
         cout << "Enter Roll no: ";
         cin >> newStudents[i].roll_no;
-        cout << "Enter course: ";
-        cin >> newStudents[i].course;
+        cout << "Enter Course: ";
+        cin.ignore();
+        getline(cin, newStudents[i].course);
         cout << "Enter Marks: ";
         cin >> newStudents[i].marks;
         cout << "Enter Grade: ";
